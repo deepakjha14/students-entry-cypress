@@ -18,13 +18,13 @@
                         <mat-form-field class="full-width">
                             <mat-label>Username</mat-label>
                             <input matInput type="text" formControlName="username">
+                            @if (loginForm.get('username')?.hasError('required') && loginForm.touched) {
+                                <mat-error>Username is mandatory</mat-error>
+                            }
+                            @if (loginForm.get('username')?.hasError('email') && loginForm.touched) {
+                                <mat-error>Email is required</mat-error>
+                            }
                         </mat-form-field>
-                        @if (loginForm.get('username')?.hasError('required') && loginForm.touched) {
-                            <mat-error>Username is mandatory</mat-error>
-                        }
-                        @if (loginForm.get('username')?.hasError('email') && loginForm.touched) {
-                            <mat-error>Email is required</mat-error>
-                        }
                     
                         Password
                         <mat-form-field class="full-width">
