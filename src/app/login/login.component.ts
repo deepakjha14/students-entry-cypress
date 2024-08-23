@@ -7,13 +7,14 @@ import { MatCardModule } from '@angular/material/card';
 import { NavigationExtras, Router } from '@angular/router';
 
 import { AuthService } from "../shared/auth.service";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule, FormsModule, ReactiveFormsModule]
+  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule, FormsModule, ReactiveFormsModule, CommonModule]
 })
 export class LoginComponent implements OnInit {
     loginForm!: FormGroup;
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
     
     ngOnInit(): void {
         this.loginForm = new FormGroup({
-        username: new FormControl('', [Validators.required]),
+        username: new FormControl('', [Validators.required, Validators.email, Validators.minLength(4)]),
         password: new FormControl('', [Validators.required])
         });
     }
