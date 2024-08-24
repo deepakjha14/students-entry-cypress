@@ -1,3 +1,4 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 import { Observable, of } from "rxjs";
@@ -10,11 +11,17 @@ export class AuthService {
     isLoggedIn: any = 0;
     reirectUrl: string|null = null;
 
-    login(): Observable<boolean> {
-        return of(true).pipe(
-            delay(2000),
-            tap(() => this.isLoggedIn = true)
-        );
+    constructor(
+        private httpClient: HttpClient
+    ) {
+
+    }
+
+    login(username: string, password: string): Observable<any> {
+        return this.httpClient.post('/api/login', {username, password})
+            .pipe (
+                tap(() => this.isLoggedIn = true)
+            );
     }
 
     logOut(): void {

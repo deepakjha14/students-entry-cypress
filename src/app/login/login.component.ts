@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit {
 			console.log('Form submitted with:', this.loginForm.value);
 		}
 		
-		this.authService.login().subscribe(
-			()=> {
+		this.authService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(
+			() => {
 				if (this.authService.isLoggedIn) {
 					// Usually you would use the redirect URL from the auth service.
 					// However to keep the example simple, we will always redirect to `/admin`.
