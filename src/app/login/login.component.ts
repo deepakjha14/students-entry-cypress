@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
         });
     }
 
-    onClickLogin() {
+    onClickLogin(): void {
 		// Implement your authentication logic here, e.g., send credentials to backend
 		if (this.loginForm.valid) {
 			console.log('Form submitted with:', this.loginForm.value);
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 		
 		this.authService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(
 			() => {
-				if (this.authService.isLoggedIn) {
+				if (this.isLoggedInFunction()) {
 					// Usually you would use the redirect URL from the auth service.
 					// However to keep the example simple, we will always redirect to `/admin`.
 					const redirectUrl = '/dashboard';
@@ -52,5 +52,9 @@ export class LoginComponent implements OnInit {
 				}
 			}
 		);
+	}
+
+	isLoggedInFunction(): boolean {
+		return this.authService.isLoggedIn;
 	}
 }
