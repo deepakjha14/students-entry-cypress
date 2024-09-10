@@ -39,10 +39,11 @@ jobs:
       - name: Print current working directory
         run:  | 
           echo "Current working directory: $PWD"
-          
+
       - name: List files in the repository
         run: |
-            ls ${{ github.workspace }}
+            ls ${{ github.workspace }} > file_list.txt
+            cat file_list.txt
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
