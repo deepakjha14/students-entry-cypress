@@ -1,8 +1,15 @@
 {
-  "login": {
-    "username": "deepak@jha",
-    "password": "password"
-  },
+  "login": [
+    {
+      "username": "deepak@jha",
+      "password": "password"
+    },
+    {
+      "id": "246b",
+      "username": "deepak@jha",
+      "password": "password"
+    }
+  ],
   "studentsRecords": [
     {
       "name": "Deepak1",
