@@ -36,6 +36,10 @@ jobs:
           name: dist
           path: dist
 
+      - name: Print current working directory
+        run:  | 
+          echo "Current working directory: $PWD"
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
