@@ -39,7 +39,7 @@ jobs:
       - name: Print current working directory
         run:  | 
           echo "Current working directory: $PWD"
-          ls -la
+          ls -al
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
