@@ -40,8 +40,13 @@ jobs:
         run:  | 
           echo "Current working directory: $PWD"
 
+      - name: Print workspace directory
+        run: | 
+          echo "Workspace directory: ${{ github.workspace }}"
+
       - name: List files in the repository
         run: |
+            echo "Current directories to print"
             ls ${{ github.workspace }} > file_list.txt
             cat file_list.txt
 
