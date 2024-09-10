@@ -3,7 +3,7 @@ import { defineConfig } from "cypress";
 import * as utils from "./src/cypress-util/cypress-util";
 
 export default defineConfig({
-  retries: 3,
+  retries: 0,
   viewportHeight: 800,
   viewportWidth: 1200,
   defaultCommandTimeout: 12000,
