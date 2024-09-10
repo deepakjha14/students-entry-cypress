@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "strat:api": "json-server --watch db.json --port 3000",
+    "start:api": "json-server --watch db.json --port 3000",
     "start:local": "wait-on tcp:3000 && ng serve --proxy-config proxy.conf.json"
   },
   "private": true,
