@@ -47,7 +47,7 @@ jobs:
       - name: List files in the repository
         run: |
             echo "Current directories to print"
-            ls ${{ github.workspace }} > file_list.txt
+            ls ${{ github.workspace }}/cypress > file_list.txt
             cat file_list.txt
 
       - name: Cypress run
