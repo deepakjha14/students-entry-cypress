@@ -36,13 +36,13 @@ jobs:
           name: dist
           path: dist
 
-      - name: Print current working directory
-        run:  | 
-          echo "Current working directory: $PWD"
+      # - name: Print current working directory
+      #   run:  | 
+      #     echo "Current working directory: $PWD"
 
-      - name: Print workspace directory
-        run: | 
-          echo "Workspace directory: ${{ github.workspace }}"
+      # - name: Print workspace directory
+      #   run: | 
+      #     echo "Workspace directory: ${{ github.workspace }}"
 
       - name: List files in the repository
         run: |
