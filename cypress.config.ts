@@ -22,7 +22,6 @@ export default defineConfig({
         }
       })
     },
-    defaultCommandTimeout: 12000,
     baseUrl: "http://localhost:4200",
   },
   component: {
