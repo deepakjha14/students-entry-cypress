@@ -44,12 +44,12 @@ jobs:
         run: | 
           echo "Workspace directory: ${{ github.workspace }}"
 
-      - name: List files in the repository
+      - name: Check the type of encoding
         run: |
-            echo "Current directories to print"
-            ls ${{ github.workspace }} > file_list.txt
-            cat file_list.txt
-
+          echo "Listing the repo type"
+          file -i ${{ github.workspace }}/cypress/downloads/test.csv > file_list.txt
+          cat file_list.txt
+          
       - name: Create test file
         run: |
           mkdir -p ./cypress/downloads
