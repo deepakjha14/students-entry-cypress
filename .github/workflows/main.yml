@@ -45,6 +45,11 @@ jobs:
           echo "Listing the repo type"
           file -i ${{ github.workspace }}/cypress/downloads/test.csv > file_list.txt
           cat file_list.txt
+
+      - name: Convert file into utf-8
+        run: |
+          echo "Converting file to utf-8"
+          iconv -f us-ascii -t UTF-8 ${{ github.workspace }}/cypress/downloads/test.csv > ${{ github.workspace }}/cypress/downloads/test_utf8.csv
       
       - name: Cypress run
         uses: cypress-io/github-action@v6
