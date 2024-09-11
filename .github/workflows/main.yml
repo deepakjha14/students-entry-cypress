@@ -40,20 +40,11 @@ jobs:
         run:  | 
           echo "Current working directory: $PWD"
 
-      - name: Print workspace directory
-        run: | 
-          echo "Workspace directory: ${{ github.workspace }}"
-
       - name: Check the type of encoding
         run: |
           echo "Listing the repo type"
           file -i ${{ github.workspace }}/cypress/downloads/test.csv > file_list.txt
           cat file_list.txt
-          
-      - name: Create test file
-        run: |
-          mkdir -p ./cypress/downloads
-          echo "email,password" > ./cypress/downloads/test.csv
       
       - name: Cypress run
         uses: cypress-io/github-action@v6
