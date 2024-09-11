@@ -43,7 +43,7 @@ jobs:
       - name: Convert file into utf-8
         run: |
           echo "Converting file to utf-8"
-          iconv -f us-ascii -t UTF-8 ${{ github.workspace }}/cypress/downloads/test.csv > ${{ github.workspace }}/cypress/downloads/test_utf8.csv
+          iconv -f us-ascii -t utf-8 ${{ github.workspace }}/cypress/downloads/test.csv > ${{ github.workspace }}/cypress/downloads/test_utf8.csv
       
       - name: Check the type of encoding
         run: |
