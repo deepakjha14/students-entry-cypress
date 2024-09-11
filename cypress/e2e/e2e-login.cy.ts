@@ -38,7 +38,7 @@ describe(
         it(
             'Should login in the app using csv file data',
             () => {
-                cy.readFile('cypress/downloads/test.csv').then(
+                cy.readFile('cypress/fixtures/test.csv').then(
                     (data) => {
                         cy.task('csvToJson', data).then(
                             (jsonData: any) => {
@@ -49,10 +49,6 @@ describe(
                                 cy.url().should('include', '/dashboard');
                             }
                         );
-                        // cy.get('input[formControlName="username"]').focus().as('username').type(data.username);
-                        // cy.get('input[formControlName="password"]').focus().as('password').type(data.password);
-                        // cy.get('.mdc-button__label').click();
-                        // cy.url().should('include', '/dashboard');
                     }
                 )
             }
