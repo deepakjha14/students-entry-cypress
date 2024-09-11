@@ -38,7 +38,7 @@ describe(
         it(
             'Should login in the app using csv file data',
             () => {
-                cy.readFile('cypress/fixtures/test.csv',  'utf8' ).then(
+                cy.readFile('cypress/downloads/test.csv').then(
                     (data) => {
                         cy.task('csvToJson', data).then(
                             (jsonData: any) => {
