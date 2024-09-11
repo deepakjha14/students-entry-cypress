@@ -47,9 +47,14 @@ jobs:
       - name: List files in the repository
         run: |
             echo "Current directories to print"
-            ls ${{ github.workspace }}/cypress/downloads > file_list.txt
+            ls ${{ github.workspace }} > file_list.txt
             cat file_list.txt
 
+      - name: Create test file
+        run: |
+          mkdir -p ./cypress/downloads
+          echo "email,password" > ./cypress/downloads/test.csv
+      
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
