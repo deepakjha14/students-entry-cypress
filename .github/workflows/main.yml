@@ -55,7 +55,7 @@ jobs:
         run: |
           echo "Listing the repo type"
           ls ${{ github.workspace }}/cypress/downloads/ > list.txt
-          cat lists.txt
+          cat list.txt
 
       - name: Check the type of encoding
         run: |
