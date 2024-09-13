@@ -3,6 +3,7 @@ import { defineConfig } from "cypress";
 import * as utils from "./src/cypress-util/cypress-util";
 
 export default defineConfig({
+  projectId: "1ddrdx", // Your project id from cypress dashboard
   retries: 0,
   viewportHeight: 800,
   viewportWidth: 1200,

@@ -43,3 +43,9 @@ jobs:
           wait-on: 'http://localhost:4200'
           wait-on-timeout: 60
           browser: chrome
+      
+      - name: Upload test results
+        run: npx cypress run --record 
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          
