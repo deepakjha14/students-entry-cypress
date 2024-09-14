@@ -17,6 +17,7 @@ describe(
                         cy.get('input[formControlName="password"]').focus().as('password').type(data.password);
                         cy.get('.mdc-button__label').click();
                         cy.url().should('include', '/dashboard');
+                        cy.screenshot();
                     }
                 )
             }
@@ -30,6 +31,7 @@ describe(
                         cy.get('input[formControlName="username"]').focus().as('username').type(data.username);
                         cy.get('input[formControlName="password"]').focus().as('password').type(data.password);
                         cy.get('mat-error').first().should("have.text", "Email is required");
+                        cy.screenshot();
                     }
                 )
             }
@@ -49,6 +51,8 @@ describe(
                                 cy.url().should('include', '/dashboard');
                             }
                         );
+
+                        cy.screenshot();
                     }
                 )
             }
